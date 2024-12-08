@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block imports %}
+<script src="{% static 'js/signUpFormController.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2>Sign Up</h2>
+        <!-- AngularJS Form -->
+        <div class="container mt-5">
+            <form name="signUpForm" novalidate ng-submit="submitForm(signUpForm.$valid)">
+                <div class="mb-3">
+                    <label for="email" class="form-label">email</label>
+                    <input type="text" class="form-control" id="email" name="email" ng-model="user.email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" ng-model="user.password" required>
+                </div>
+                <div class="mb-3">
+                    <label for="confirm_password" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirm_password" name="confirm_password" ng-model="user.confirm_password" required>
+                </div>
+                <div class="mb-3">
+                    <label for="user_type" class="form-label">I am a:</label>
+                    <select class="form-control" id="user_type" name="user_type" ng-model="user.user_type" required>
+                        <option value="candidate">Candidate</option>
+                        <option value="employer">Employer</option>
+                        <option value="agency">Agency</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

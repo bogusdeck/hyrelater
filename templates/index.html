@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="container text-center">
+        <h1>Welcome to the Job Portal</h1>
+        <p class="lead">Find your dream job or hire top talent.</p>
+        <a class="btn btn-primary" href="{% url 'landing_page' %}">Candidate Login/Sign Up</a>
+        <a class="btn btn-secondary" href="{% url 'landing_page' %}">Employer Login/Sign Up</a>
+    </div>
+{% endblock %}
